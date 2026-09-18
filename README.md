@@ -45,7 +45,7 @@ in a fresh clone even though their contents aren't committed.
 
 - Python 3.9+
 - pip
-- Internet access on first run, to install missing Python packages automatically and to download the YOLO model weights (`yolo11n-seg.pt`, ~6 MB)
+- Internet access is required to install Python packages on first setup. The YOLO segmentation model (`yolo11n-seg.pt`) is already included in the repository.
 
 ## Setup
 
