@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Object Outline Detector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="aurora">
+  <span class="blob blob-a"></span>
+  <span class="blob blob-b"></span>
+  <span class="blob blob-c"></span>
+</div>
+
+<div class="about-page">
+
+  <a href="/" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Back to detector
+  </a>
+
+  <main class="glass-card about-card">
+
+    <section class="about-identity">
+      <div class="avatar" role="img" aria-label="Portrait emoji of a man">👨</div>
+      <h1 class="about-name">Aritra Dhuan</h1>
+      <div class="reg-chip">Registration no. <strong>24BAI10513</strong></div>
+    </section>
+
+    <dl class="info-list">
+      <div class="info-row">
+        <dt>College</dt>
+        <dd>VIT Bhopal University</dd>
+      </div>
+      <div class="info-row">
+        <dt>Email ID</dt>
+        <dd>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aritra.24bai10513@vitbhopal.ac.in">
+            aritra.24bai10513@vitbhopal.ac.in
+          </a>
+        </dd>
+      </div>
+      <div class="info-row">
+        <dt>Year</dt>
+        <dd>3rd year</dd>
+      </div>
+      <div class="info-row">
+        <dt>Assignment</dt>
+        <dd>Computer Vision, under VITyarthi</dd>
+      </div>
+    </dl>
+
+    <section class="project-block">
+      <h2>About this project</h2>
+      <p>
+        <strong>Object Outline Detector</strong> was made for the Computer Vision
+        assignment under <strong>VITyarthi</strong>, at <strong>VIT Bhopal</strong>,
+        in my 3rd year.
+      </p>
+      <p>
+        You upload an image and type the object you want to find. The app locates it
+        with YOLO11 segmentation, then traces its outline and analyses its shape with
+        classical computer-vision methods. If you leave the object blank, it falls back
+        to a structural outline of the whole image.
+      </p>
+      <ul class="tech-list" aria-label="Techniques used">
+        <li>YOLO11 segmentation</li>
+        <li>Canny edges</li>
+        <li>Hough lines</li>
+        <li>Harris corners</li>
+        <li>Hessian blobs</li>
+        <li>Flask</li>
+      </ul>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

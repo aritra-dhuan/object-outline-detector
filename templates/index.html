@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Object Outline Detector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="aurora">
+  <span class="blob blob-a"></span>
+  <span class="blob blob-b"></span>
+  <span class="blob blob-c"></span>
+</div>
+
+<a href="{{ url_for('about') }}" id="about-btn" class="about-btn" aria-label="About me">
+  <span class="about-btn-icon" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M4.5 20C4.5 16.4 7.9 14 12 14C16.1 14 19.5 16.4 19.5 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </span>
+  <span class="about-btn-label">About me</span>
+</a>
+
+<div class="home-page">
+
+  <header class="home-header">
+    <div class="eyebrow">YOLO11 &nbsp;·&nbsp; Classical CV</div>
+    <h1>Object Outline<br><span class="accent-text">Detector</span></h1>
+    <p class="subtitle">Drop in an image, tell it what to look for, and let the pipeline trace it out.</p>
+  </header>
+
+  <main class="glass-card upload-card">
+    <div id="drop-zone" class="drop-zone">
+      <input type="file" id="image-input" accept="image/png, image/jpeg, image/bmp, image/webp" hidden>
+      <div id="drop-zone-prompt" class="drop-zone-prompt">
+        <span class="upload-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16V4M12 4L7 9M12 4L17 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 15V17.5C4 18.8807 5.11929 20 6.5 20H17.5C18.8807 20 20 18.8807 20 17.5V15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p class="drop-title">Click to choose an image, or drag one here</p>
+        <p class="hint">PNG · JPG · JPEG · BMP · WEBP — up to 16&nbsp;MB</p>
+      </div>
+      <img id="preview-img" class="preview-img" alt="Preview" hidden>
+      <button type="button" id="clear-img-btn" class="clear-img-btn" hidden aria-label="Remove image">&times;</button>
+    </div>
+
+    <div class="controls">
+      <label for="query-input">What should it find?</label>
+      <input type="text" id="query-input" placeholder="e.g. car, dog, person, bicycle...">
+      <p class="hint">Leave blank to use the structural fallback outline instead.</p>
+
+      <button id="process-btn" class="process-btn" disabled>
+        <span class="process-btn-fill" id="process-btn-fill"></span>
+        <span class="process-btn-label" id="process-btn-label">Process Image</span>
+      </button>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <section id="error-box" class="error-box" hidden></section>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
