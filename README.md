@@ -50,7 +50,7 @@ in a fresh clone even though their contents aren't committed.
 ## Setup
 
 ```bash
-git clone https://github.com/<your-username>/object-outline-detector.git
+git clone https://github.com/aritra-dhuan/object-outline-detector.git
 cd object-outline-detector
 ```
 
@@ -124,8 +124,7 @@ failing silently.
 - The YOLO model is loaded lazily, on the first `/process` request —
   not at startup — so `python3 main.py` opens the browser quickly
   rather than waiting on model load.
-- Model weights (`*.pt`) are not committed to the repository; they are
-  downloaded automatically by `ultralytics` on first use.
+- The YOLO segmentation model (`yolo11n-seg.pt`) is included in the repository and is loaded when the first image is processed.
 - All file paths in `main.py` are computed relative to the script's own
   location (`os.path.dirname(os.path.abspath(__file__))`), so the app
   works regardless of the directory it's launched from.
